@@ -1,4 +1,4 @@
-class UsersController < User::ApplicationController
+class UsersController < ApplicationController
 
   # ユーザーがログインしていない場合、ログイン画面だけが表示
   before_action :authenticate_user!
