@@ -1,8 +1,11 @@
 class CreateBooks < ActiveRecord::Migration[5.2]
   def change
     create_table :books do |t|
+      id :integer
       t.string :title
-      t.string :body
+      text :body
+      user_id :integer
+
       t.timestamps
     end
   end

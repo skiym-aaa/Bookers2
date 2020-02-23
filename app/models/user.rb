@@ -10,5 +10,6 @@ class User < ApplicationRecord
  def email_changed?
    false
  end
+ has_many :books, dependent: :destroy
  attachment :profile
 end

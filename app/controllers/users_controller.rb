@@ -1,4 +1,7 @@
-class UsersController < ApplicationController
+class UsersController < User::ApplicationController
+
+  # ユーザーがログインしていない場合、ログイン画面だけが表示
+  before_action :authenticate_user!
   def index
   end
 
@@ -12,4 +15,5 @@ class UsersController < ApplicationController
 
   def update
   end
+
 end
