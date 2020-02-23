@@ -10,6 +10,44 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <nav class="nav navbar-nav navbar-left">
+          <h4>Bookers</h4>
+        </nav>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to ' Home', "#", class: "glyphicon glyphicon-home home" %>
+              </li>
+              <li class="">
+                <%= link_to ' Users', "#", class: "glyphicon glyphicon-user users" %>
+              </li>
+              <li class="">
+                <%= link_to ' Books', "#", class: "glyphicon glyphicon-book books" %>
+              </li>
+              <li class="">
+                <%= link_to " logout", "#", class: "glyphicon glyphicon-log-out logout" %>
+              </li>
+            <% else %>
+              <li class="">
+                <%= link_to "Home", "#", class: "glyphicon glyphicon-home home" %>
+              </li>
+              <li class="">
+                <%= link_to "About", "#", class: "glyphicon glyphicon-link about" %>
+              </li>
+              <li class="">
+                <%= link_to "sign in", "#", class: "glyphicon glyphicon-edit sign_up" %>
+              </li>
+              <li class="">
+                <%= link_to "login", "#", class: "glyphicon glyphicon-log-in sign_in" %>
+              </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  <%= yield %>
   </body>
 </html>

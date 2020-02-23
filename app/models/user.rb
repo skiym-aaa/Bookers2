@@ -10,4 +10,5 @@ class User < ApplicationRecord
  def email_changed?
    false
  end
+ attachment :profile
 end
