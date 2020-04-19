@@ -3,13 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
- # deviseでemailを不必要にする
- def email_required?
-   false
- end
- def email_changed?
-   false
- end
- has_many :books, dependent: :destroy
- attachment :profile
+  # deviseでemailを不必要にする
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
+  has_many :books, dependent: :destroy
+  attachment :profile
 end
